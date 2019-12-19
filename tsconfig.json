@@ -7,6 +7,8 @@
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,
+    "strictNullChecks": true, // no implicit nulls
+    "noImplicitAny": true, // no implicit any
     "module": "esnext",
     "moduleResolution": "node",
     "importHelpers": true,
