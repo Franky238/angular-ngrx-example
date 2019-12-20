@@ -1,3 +1,8 @@
-<div *ngFor="let img of images">
-  <img [src]="img.url" [alt]="img.title" style="max-width: 200px">
+<div class="row">
+  <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-5" *ngFor="let img of images">
+    <app-card-image [image]="img"
+                    (unlikeClick)="unlikeImg(img.id)"
+                    (likeClick)="likeImg(img.id)"></app-card-image>
+  </div>
 </div>
+

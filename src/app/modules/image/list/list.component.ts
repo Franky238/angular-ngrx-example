@@ -1,25 +1,25 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {select, Store} from '@ngrx/store';
 import {State} from '../shared/reducers/list.reducer';
-import {FetchImagesAction} from '../shared/actions/list.actions';
+import {FetchImagesAction, LikeAction, UnlikeAction} from '../shared/actions/list.actions';
 import {ImageEntity} from '../../../entities/image.entity';
 import {imageSelectors} from '../shared';
 import {takeUntil} from 'rxjs/operators';
-import {Subject} from 'rxjs';
+import {UnsubscribingComponent} from '../../../shared/utils/unsubscribing.component';
 
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.scss']
 })
-export class ListComponent implements OnInit, OnDestroy {
+export class ListComponent extends UnsubscribingComponent implements OnInit, OnDestroy {
 
   public images: ImageEntity[] = [];
-  private unsubscribe$ = new Subject();
 
   constructor(
     private store$: Store<State>,
   ) {
+    super();
   }
 
   ngOnInit() {
@@ -33,8 +33,11 @@ export class ListComponent implements OnInit, OnDestroy {
     });
   }
 
-  ngOnDestroy(): void {
-    this.unsubscribe$.next();
-    this.unsubscribe$.complete();
+  public likeImg(id: number) {
+    this.store$.dispatch(LikeAction({id}));
+  }
+
+  public unlikeImg(id: number) {
+    this.store$.dispatch(UnlikeAction({id}));
   }
 }

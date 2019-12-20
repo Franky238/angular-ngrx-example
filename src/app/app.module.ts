@@ -13,7 +13,7 @@ import {EffectsModule} from '@ngrx/effects';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     SharedModule,
@@ -27,7 +27,7 @@ import {EffectsModule} from '@ngrx/effects';
     AppRoutingModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {
 }

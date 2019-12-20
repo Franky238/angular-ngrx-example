@@ -1,0 +1,15 @@
+<div class="card h-100">
+  <img [src]="image.url" [alt]="image.title" class="card-img-top">
+  <span class="badge badge-primary badge-img">{{image.likesCount}}</span>
+  <div class="card-body">
+    <h5 class="card-title">{{image.title}}</h5>
+    <p class="card-text">{{image.subtitle}}</p>
+    <a href="#" class="btn btn-link">Detail</a>
+    <a href="#" class="btn btn-link" (click)="like($event)">
+      <i class="fas fa-thumbs-up text-success"></i>
+    </a>
+    <a href="#" class="btn btn-link" (click)="unlike($event)">
+      <i class="fas fa-thumbs-down text-danger"></i>
+    </a>
+  </div>
+</div>

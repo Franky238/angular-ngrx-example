@@ -18,4 +18,16 @@ export class ImageService {
       map(response => mapImageFromResponse(response)),
     );
   }
+
+  public likeImage(id: number): Observable<ImageEntity> {
+    return this.httpClient.post<unknown>(`${ImageService.IMAGES_URL}/${id}/like`, {}).pipe(
+      map(response => mapImageFromResponse(response)),
+    );
+  }
+
+  public unlikeImage(id: number): Observable<ImageEntity> {
+    return this.httpClient.post<unknown>(`${ImageService.IMAGES_URL}/${id}/unlike`, {}).pipe(
+      map(response => mapImageFromResponse(response)),
+    );
+  }
 }
