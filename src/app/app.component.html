@@ -1,3 +1,3 @@
-<div class="container">
+<div class="pt-2" [ngClass]="{'container': layout !== LayoutType.FLUID,'container-fluid': layout === LayoutType.FLUID}">
   <router-outlet></router-outlet>
 </div>

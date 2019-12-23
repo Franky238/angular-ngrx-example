@@ -19,6 +19,12 @@ export class ImageService {
     );
   }
 
+  public getImage(id: number): Observable<ImageEntity> {
+    return this.httpClient.get<unknown>(`${ImageService.IMAGES_URL}/${id}`).pipe(
+      map(response => mapImageFromResponse(response)),
+    );
+  }
+
   public likeImage(id: number): Observable<ImageEntity> {
     return this.httpClient.post<unknown>(`${ImageService.IMAGES_URL}/${id}/like`, {}).pipe(
       map(response => mapImageFromResponse(response)),

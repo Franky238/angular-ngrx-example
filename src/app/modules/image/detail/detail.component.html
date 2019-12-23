@@ -1,0 +1,9 @@
+<ng-container *ngIf="image">
+
+  <div class="row">
+    <div class="col-12 image-box"
+         [style.height.px]="getScreenHeight()"
+         [ngStyle]="{'background': '#fff url(' + image.url + ') no-repeat center', 'background-size': 'cover'}"></div>
+  </div>
+
+</ng-container>
