@@ -3,7 +3,46 @@
   <div class="row">
     <div class="col-12 image-box"
          [style.height.px]="getScreenHeight()"
-         [ngStyle]="{'background': '#fff url(' + image.url + ') no-repeat center', 'background-size': 'cover'}"></div>
+         [ngStyle]="{'background': 'transparent url(' + image.url + ') no-repeat center', 'background-size': 'cover'}"></div>
   </div>
 
+  <span class="badge badge-pill badge-primary badge-overlay" [ngClass]="{'badge-hidden': overlayHidden}">
+    {{image.likesCount}} <small>likes</small>
+  </span>
+
+  <div class="row overlay-pane py-5" [ngClass]="{'overlay-hidden': overlayHidden}">
+    <div class="col-12">
+      <h1>{{image.title}}</h1>
+      <p class="subtitle">{{image.subtitle}}</p>
+      <ng-container *ngIf="!detailsHidden">
+        <div class="border-top border-secondary">
+          <div>URL: <a [href]="image.url" target="_blank">{{image.url}}</a></div>
+          <div>Created at: {{image.createdAt | date:'medium'}}</div>
+          <div>Updated at: {{image.updatedAt | date:'medium'}}</div>
+        </div>
+      </ng-container>
+    </div>
+
+    <div class="col-12">
+      <ng-container *ngIf="detailsHidden">
+        <button class="btn btn-link p-0" (click)="toggleDetails()">Show details</button>
+      </ng-container>
+      <ng-container *ngIf="!detailsHidden">
+        <button class="btn btn-link p-0" (click)="toggleDetails()">Hide details</button>
+      </ng-container>
+    </div>
+
+    <div class="closer p-2 cursor-pointer" (click)="togglePane()">
+      <ng-container *ngIf="overlayHidden">
+        <i class="fas fa-chevron-circle-up"></i>
+        Show
+      </ng-container>
+
+      <ng-container *ngIf="!overlayHidden">
+        <i class="fas fa-chevron-circle-down"></i>
+        Hide
+      </ng-container>
+
+    </div>
+  </div>
 </ng-container>

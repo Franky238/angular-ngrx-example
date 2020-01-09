@@ -1,1 +1,73 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  background-color: #eee;
+}
+
+.cursor-pointer {
+  cursor: pointer !important;
+}
+
+.interactive-card {
+  .img-pad {
+    padding: 50px;
+    transition: all .4s ease-in-out;
+  }
+
+  &:hover {
+    .img-pad {
+      padding: 20px;
+      transition: all .4s ease-in-out;
+    }
+  }
+}
+
+.btn {
+  position: relative;
+
+  &.click-animate-success {
+    overflow: hidden;
+
+    &:active:after {
+      padding: 0;
+      margin: 0;
+      opacity: 1;
+      transition: 0s
+    }
+
+    &:after {
+      content: "";
+      background: #28a745;
+      display: block;
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      margin-left: -20px !important;
+      margin-top: -120%;
+      opacity: 0;
+      transition: all 0.8s
+    }
+  }
+
+  &.click-animate-error {
+    overflow: hidden;
+
+    &:active:after {
+      padding: 0;
+      margin: -120px;
+      opacity: 1;
+      transition: 0s
+    }
+
+    &:after {
+      content: "";
+      background: #dc3545;
+      display: block;
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      margin-left: -20px !important;
+      margin-top: -120%;
+      opacity: 0;
+      transition: all 0.8s
+    }
+  }
+}

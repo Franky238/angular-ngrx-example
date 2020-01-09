@@ -6,6 +6,8 @@ import {ImageEntity} from '../../../entities/image.entity';
 import {imageSelectors} from '../shared';
 import {takeUntil} from 'rxjs/operators';
 import {UnsubscribingComponent} from '../../../shared/utils/unsubscribing.component';
+import {RouterGoAction} from '../../../app.actions';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-list',
@@ -18,6 +20,7 @@ export class ListComponent extends UnsubscribingComponent implements OnInit, OnD
 
   constructor(
     private store$: Store<State>,
+    private activatedRoute: ActivatedRoute,
   ) {
     super();
   }
@@ -39,5 +42,9 @@ export class ListComponent extends UnsubscribingComponent implements OnInit, OnD
 
   public unlikeImg(id: number) {
     this.store$.dispatch(UnlikeAction({id}));
+  }
+
+  public goToCreate() {
+    this.store$.dispatch(RouterGoAction({commands: ['../', 'create'], extras: {relativeTo: this.activatedRoute}}));
   }
 }

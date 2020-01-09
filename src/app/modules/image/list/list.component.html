@@ -4,5 +4,15 @@
                     (unlikeClick)="unlikeImg(img.id)"
                     (likeClick)="likeImg(img.id)"></app-card-image>
   </div>
+  <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-5">
+    <div class="card h-100 cursor-pointer interactive-card" (click)="goToCreate()">
+      <div class="img-pad">
+        <img src="./assets/img/plus.png" alt="plus" class="card-img-top">
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Add New Image ...</h5>
+        <p class="card-text"></p>
+      </div>
+    </div>
+  </div>
 </div>
-

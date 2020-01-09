@@ -10,6 +10,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {SharedModule} from './modules/shared/shared.module';
 import {EffectsModule} from '@ngrx/effects';
+import {AppEffects} from './app.effects';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import {EffectsModule} from '@ngrx/effects';
     BrowserAnimationsModule,
     HttpClientModule,
     StoreModule.forRoot({}),
-    EffectsModule.forRoot([]),
+    EffectsModule.forRoot([AppEffects]),
     StoreDevtoolsModule.instrument({maxAge: 100, logOnly: environment.production}),
     StoreRouterConnectingModule.forRoot(),
     AppRoutingModule,

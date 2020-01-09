@@ -1,1 +1,50 @@
+.image-box {
+  position: relative;
+}
 
+.overlay-pane {
+  width: 100%;
+  background: rgba(0, 0, 0, .5);
+  position: fixed;
+  bottom: 0;
+  color: #fff;
+  min-height: 200px;
+  transition: all .5s ease-in-out;
+
+  h1 {
+    font-size: 50px;
+  }
+
+  .subtitle {
+    font-size: 30px;
+  }
+
+  .closer {
+    position: absolute;
+    height: 40px;
+    top: -40px;
+    right: 15px;
+    background: rgba(0, 0, 0, .5);
+  }
+}
+
+.badge-overlay {
+  position: absolute;
+  opacity: 1;
+  top: 40px;
+  right: 40px;
+  font-size: 45px;
+  transition: all .5s ease-in-out;
+}
+
+.badge-hidden {
+  transition: all .5s ease-in-out;
+  opacity: 0;
+}
+
+.overlay-hidden {
+  transition: all .5s ease-in-out;
+  padding: 0 !important;
+  height: 0 !important;
+  min-height: 0 !important;
+}

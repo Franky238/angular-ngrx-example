@@ -16,6 +16,8 @@ import {ImageEntity} from '../../../entities/image.entity';
 export class DetailComponent extends UnsubscribingComponent implements OnInit {
 
   public image: ImageEntity | null = null;
+  public overlayHidden = false;
+  public detailsHidden = true;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -37,6 +39,14 @@ export class DetailComponent extends UnsubscribingComponent implements OnInit {
 
   public getScreenHeight() {
     return window.innerHeight;
+  }
+
+  public togglePane() {
+    this.overlayHidden = !this.overlayHidden;
+  }
+
+  public toggleDetails() {
+    this.detailsHidden = !this.detailsHidden;
   }
 
 }

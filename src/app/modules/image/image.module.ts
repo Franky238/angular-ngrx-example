@@ -8,12 +8,15 @@ import {EffectsModule} from '@ngrx/effects';
 import {ListEffects} from './shared/effects/list.effects';
 import {DetailComponent} from './detail/detail.component';
 import {DetailEffects} from './shared/effects/detail.effects';
+import { FormComponent } from './form/form.component';
+import {FormEffects} from './shared/effects/form.effects';
 
 
 @NgModule({
   declarations: [
     ListComponent,
     DetailComponent,
+    FormComponent,
   ],
   imports: [
     SharedModule,
@@ -21,6 +24,7 @@ import {DetailEffects} from './shared/effects/detail.effects';
     EffectsModule.forFeature([
       ListEffects,
       DetailEffects,
+      FormEffects,
     ]),
     ImageRoutingModule,
   ]
