@@ -48,3 +48,16 @@
   height: 0 !important;
   min-height: 0 !important;
 }
+
+.btn-overlay {
+  opacity: 1;
+  transition: all .5s ease-in-out;
+  position: absolute;
+  top: 40px;
+  left: 40px;
+}
+
+.btn-hidden {
+  transition: all .5s ease-in-out;
+  opacity: 0;
+}

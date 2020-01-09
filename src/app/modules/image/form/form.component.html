@@ -1,6 +1,7 @@
 <div class="row">
   <div class="col-12">
-    <h1>Create New Image...</h1>
+    <h1 *ngIf="selectedFormMode === FormMode.CREATE">Create New Image...</h1>
+    <h1 *ngIf="selectedFormMode === FormMode.EDIT">Edit Image...</h1>
     <form novalidate (ngSubmit)="submitForm()" [formGroup]="form">
       <div class="form-group row">
         <label for="title" class="col-sm-2 col-form-label col-form-label-lg">Title</label>

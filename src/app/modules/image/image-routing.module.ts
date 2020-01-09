@@ -19,6 +19,13 @@ import {FormMode} from '../../shared/enums/form-mode';
         formMode: FormMode.CREATE,
       }
     }, {
+      path: 'edit/:id',
+      component: FormComponent,
+      data: {
+        layout: LayoutType.NORMAL,
+        formMode: FormMode.EDIT,
+      }
+    }, {
       path: ':id',
       component: DetailComponent,
       data: {

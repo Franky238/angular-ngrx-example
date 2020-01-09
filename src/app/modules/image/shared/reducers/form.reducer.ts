@@ -1,7 +1,6 @@
 import {ImageEntity} from '../../../../entities/image.entity';
 import {Action, createReducer, on} from '@ngrx/store';
-import {FetchImageFailureAction, FetchImageSuccessAction} from '../actions/detail.actions';
-import {CreateImageSuccessAction} from '../actions/form.actions';
+import {FetchImageFailureAction, FetchImageSuccessAction} from '../actions/form.actions';
 
 export interface State {
   image: ImageEntity | null;
@@ -13,8 +12,8 @@ const initialState: State = {
 
 const formReducer = createReducer(
   initialState,
-  // on(CreateImageSuccessAction, (state, {image}) => ({...state, image})),
-  // on(FetchImageFailureAction, state => ({...state, image: null})),
+  on(FetchImageSuccessAction, (state, {image}) => ({...state, image})),
+  on(FetchImageFailureAction, state => ({...state, image: null})),
 );
 
 export function reducer(state: State | undefined, action: Action) {

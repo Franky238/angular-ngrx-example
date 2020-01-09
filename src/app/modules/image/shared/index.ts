@@ -1,4 +1,4 @@
-import { ActionReducerMap, createFeatureSelector, createSelector } from '@ngrx/store';
+import {ActionReducerMap, createFeatureSelector, createSelector} from '@ngrx/store';
 import * as imageListReducer from './reducers/list.reducer';
 import * as imageDetailReducer from './reducers/detail.reducer';
 import * as imageFormReducer from './reducers/form.reducer';

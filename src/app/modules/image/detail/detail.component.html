@@ -6,6 +6,13 @@
          [ngStyle]="{'background': 'transparent url(' + image.url + ') no-repeat center', 'background-size': 'cover'}"></div>
   </div>
 
+  <a class="btn btn-warning btn-lg btn-overlay"
+     [routerLink]="['../', 'edit', image.id]"
+     [ngClass]="{'btn-hidden': overlayHidden}">
+    <i class="fas fa-pen"></i>
+    Edit
+  </a>
+
   <span class="badge badge-pill badge-primary badge-overlay" [ngClass]="{'badge-hidden': overlayHidden}">
     {{image.likesCount}} <small>likes</small>
   </span>

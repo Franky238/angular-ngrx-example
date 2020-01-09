@@ -42,4 +42,10 @@ export class ImageService {
       map(response => mapImageFromResponse(response)),
     );
   }
+
+  public updateImage(id: number, request: ImageRequest): Observable<ImageEntity> {
+    return this.httpClient.patch<unknown>(`${ImageService.IMAGES_URL}/${id}`, request).pipe(
+      map(response => mapImageFromResponse(response)),
+    );
+  }
 }

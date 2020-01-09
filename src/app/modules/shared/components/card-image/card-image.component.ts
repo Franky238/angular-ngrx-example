@@ -17,7 +17,8 @@ export class CardImageComponent implements OnInit {
   @Output()
   public unlikeClick = new EventEmitter<void>();
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
