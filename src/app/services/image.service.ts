@@ -6,7 +6,7 @@ import {map} from 'rxjs/operators';
 
 @Injectable({providedIn: 'root'})
 export class ImageService {
-  private static IMAGES_URL = 'http://localhost:4201/images';
+  private static IMAGES_URL = '/api/images';
 
   constructor(
     private httpClient: HttpClient,
